@@ -6,14 +6,41 @@
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <!-- Products -->
+        {{#if isProducts}}
+        <a class="me-3 py-2 link-body-emphasis" href="/products">Products</a>
+        {{else}}
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/products">Products</a>
+        {{/if}}
+
+        <!-- Add Products -->
+        {{#if isAdd}}
+        <a class="me-3 py-2 link-body-emphasis" href="/add">Add</a>
+        {{else}}
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/add">Add</a>
-        <button class="btn btn-primary mx-1">
+        {{/if}}
+        
+        <!-- Login -->
+        {{#if isLogin}}
+        <button class="btn btn-primary active mx-1">
           <a class="text-light text-decoration-none" href="/login">Log in</a>
         </button>
-        <button class="btn btn-success">
-          <a class="text-light text-decoration-none" href="/signin">Register</a>
+        {{else}}
+        <button class="btn btn-outline-primary mx-1">
+          <a class="link-body-emphasis text-decoration-none" href="/login">Log in</a>
         </button>
+        {{/if}}
+
+        <!-- Register -->
+        {{#if isRegister}}
+        <button class="btn btn-primary active">
+          <a class="text-light text-decoration-none" href="/register">Register</a>
+        </button>
+        {{else}}
+        <button class="btn btn-outline-primary">
+          <a class="link-body-emphasis text-decoration-none" href="/register">Register</a>
+        </button>
+        {{/if}}
       </nav>
     </div>
 </header>

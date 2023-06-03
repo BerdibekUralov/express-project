@@ -9,13 +9,15 @@ router.get('/', (req, res) => {
 
 router.get('/products', (req, res) => {
   res.render('products', {
-    title: 'Products | Express'
+    title: 'Products | Express',
+    isProducts: true
   });
 });
 
 router.get('/add', (req, res) => {
   res.render('add', {
-    title: 'Add Products | Express'
+    title: 'Add Products | Express',
+    isAdd: true
   });
 });
 

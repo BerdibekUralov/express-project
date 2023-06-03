@@ -3,14 +3,26 @@ const router = Router()
 
 router.get('/login', (req, res) => {
   res.render('login', {
-    title: 'Log in | Express'
+    title: 'Log in | Express',
+    isLogin: true
   });
 });
 
 router.get('/register', (req, res) => {
   res.render('register', {
-    title: 'Register | Express'
+    title: 'Register | Express',
+    isRegister: true
   });
 });
+
+router.post('/login', (req, res) => {
+  console.log(req.body);
+  res.redirect('/')
+})
+
+router.post('/register', (req, res) => {
+  console.log(req.body);
+  res.redirect('/')
+})
 
 export default router
